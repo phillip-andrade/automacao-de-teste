@@ -27,7 +27,7 @@ public class Steps {
     }
 
     @E("clique em next na primeira aba")
-    public void clickNextFirstTab() {
+    public void clickNextFirstTab() throws InterruptedException {
         form.getTabEnterVehicleData().clickNext();
     }
 }

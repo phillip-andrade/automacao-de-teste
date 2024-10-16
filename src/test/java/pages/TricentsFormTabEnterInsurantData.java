@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +13,7 @@ import util.Page;
 
 public class TricentsFormTabEnterInsurantData extends Page{
 	
-	WebDriverWait wait = getDriverWait();
+	Actions actions = new Actions(getDriver());
 
     public TricentsFormTabEnterInsurantData() {
         PageFactory.initElements(getDriver(), this);
@@ -30,12 +31,6 @@ public class TricentsFormTabEnterInsurantData extends Page{
     @FindBy(id = "birthdate")
     protected WebElement fieldBirthDate;
     
-    @FindBy(id = "gendermale")
-    protected WebElement selectGenderMale;
-    
-    @FindBy(id = "genderfemale")
-    protected WebElement selectGenderFamale;
-    
     @FindBy(id = "streetaddress")
     protected WebElement fieldStreetAddress;
     
@@ -50,21 +45,6 @@ public class TricentsFormTabEnterInsurantData extends Page{
     
     @FindBy(id = "occupation")
     protected WebElement fieldOccupation;
-    
-    @FindBy(id = "speeding")
-    protected WebElement selectdHobbieSpeeding;
-    
-    @FindBy(id = "bungeejumping")
-    protected WebElement selectHobbieBungeeJumping;
-    
-    @FindBy(id = "cliffdiving")
-    protected WebElement selectHobbieCliffDiving;
-    
-    @FindBy(id = "skydiving")
-    protected WebElement selectHobbieSkyDiving;
-    
-    @FindBy(id = "other")
-    protected WebElement selectHobbieOther;
     
     @FindBy(id = "website")
     protected WebElement fieldWebSite;
@@ -98,28 +78,17 @@ public class TricentsFormTabEnterInsurantData extends Page{
     	fieldBirthDate.sendKeys(birthDate);
     }
     
-//    public void setGenderMale() {
-//    	WebElement radio = getDriver().findElement(By.xpath("gendermale"));
-//		wait.until(ExpectedConditions.elementToBeClickable(radio));
-//		radio.click();
-//    	selectGenderMale.click();
-//    }
-//   
-//    public void setGenderFamele() {
-//    	selectGenderFamale.click();
-//    }
-    
-    public void setGender(String gender) {
+    public void setGender(String gender) throws InterruptedException {
     	if (gender.equalsIgnoreCase("Male")) {
-    		WebElement radio = getDriver().findElement(By.id("gendermale"));
-//    		wait.until(ExpectedConditions.elementToBeClickable(radio));
-    		radio.click();
-    		
+    		WebElement radio = getDriver().findElement(By.xpath("//input[@id='gendermale']"));
+    		getDriver().findElement(By.xpath("//input[@id='gendermale']"));
+    		Thread.sleep(500);
+    		actions.moveToElement(radio).click().build().perform();
     	} else {
-    		WebElement radio = getDriver().findElement(By.id("genderfemale"));
-//    		wait.until(ExpectedConditions.elementToBeClickable(radio));
-    		radio.click();
-
+    		WebElement radio = getDriver().findElement(By.xpath("//input[@id='genderfemale']"));
+    		getDriver().findElement(By.xpath("//input[@id='genderfemale']"));
+    		Thread.sleep(500);
+    		actions.moveToElement(radio).click().build().perform();
     	}
     }
     
@@ -143,44 +112,39 @@ public class TricentsFormTabEnterInsurantData extends Page{
     	fieldOccupation.sendKeys(occupation);
     }
     
-    public void selectHobbieSpeeding() {
-    	WebDriverWait wait = getDriverWait();
-    	WebElement radio = getDriver().findElement(By.id("speeding"));
-		wait.until(ExpectedConditions.elementToBeClickable(radio));
-		radio.click();
-//    	selectdHobbieSpeeding.click();
+    public void selectHobbieSpeeding() throws InterruptedException {
+    	WebElement radio = getDriver().findElement(By.xpath("//input[@id='speeding']"));
+		getDriver().findElement(By.xpath("//input[@id='speeding']"));
+		Thread.sleep(500);
+		actions.moveToElement(radio).click().build().perform();
     }
     
-    public void selectHobbieBungeeJumping() {
-    	WebDriverWait wait = getDriverWait();
-    	WebElement radio = getDriver().findElement(By.id("bungeejumping"));
-		wait.until(ExpectedConditions.elementToBeClickable(radio));
-		radio.click();
-//    	selectHobbieBungeeJumping.click();
+    public void selectHobbieBungeeJumping() throws InterruptedException {
+    	WebElement radio = getDriver().findElement(By.xpath("//input[@id='bungeejumping']"));
+		getDriver().findElement(By.xpath("//input[@id='bungeejumping']"));
+		Thread.sleep(500);
+		actions.moveToElement(radio).click().build().perform();
     }
     
-    public void selectHobbieCliffDiving() {
-    	WebDriverWait wait = getDriverWait();
-    	WebElement radio = getDriver().findElement(By.id("cliffdiving"));
-		wait.until(ExpectedConditions.elementToBeClickable(radio));
-		radio.click();
-//    	selectHobbieCliffDiving.click();
+    public void selectHobbieCliffDiving() throws InterruptedException {
+    	WebElement radio = getDriver().findElement(By.xpath("//input[@id='cliffdiving']"));
+		getDriver().findElement(By.xpath("//input[@id='cliffdiving']"));
+		Thread.sleep(500);
+		actions.moveToElement(radio).click().build().perform();
     }
     
-    public void selectHobbieSkyDiving() {
-    	WebDriverWait wait = getDriverWait();
-    	WebElement radio = getDriver().findElement(By.id("skydiving"));
-		wait.until(ExpectedConditions.elementToBeClickable(radio));
-		radio.click();
-//    	selectHobbieSkyDiving.click();
+    public void selectHobbieSkyDiving() throws InterruptedException {
+    	WebElement radio = getDriver().findElement(By.xpath("//input[@id='skydiving']"));
+		getDriver().findElement(By.xpath("//input[@id='skydiving']"));
+		Thread.sleep(500);
+		actions.moveToElement(radio).click().build().perform();
     }
     
-    public void selectHobbieOther() {
-    	WebDriverWait wait = getDriverWait();
-    	WebElement radio = getDriver().findElement(By.id("other"));
-		wait.until(ExpectedConditions.elementToBeClickable(radio));
-		radio.click();
-//    	selectHobbieOther.click();
+    public void selectHobbieOther() throws InterruptedException {
+    	WebElement radio = getDriver().findElement(By.xpath("//input[@id='other']"));
+		getDriver().findElement(By.xpath("//input[@id='other']"));
+		Thread.sleep(500);
+		actions.moveToElement(radio).click().build().perform();
     }
     
     public void setWebSite(String webSite) {
@@ -195,11 +159,13 @@ public class TricentsFormTabEnterInsurantData extends Page{
     	buttonPictureUpload.click();
     }
     
-    public void clickNext() {
+    public void clickNext() throws InterruptedException {
+		Thread.sleep(1000);
     	buttonNext.click();
     }
     
-    public void clickPrev() {
+    public void clickPrev() throws InterruptedException {
+		Thread.sleep(1000);
     	buttonPrev.click();
     }
 

@@ -6,6 +6,7 @@ public class TricentsForm {
     private final TricentsFormTabEnterInsurantData tabEnterInsurantData = new TricentsFormTabEnterInsurantData();
     private final TricentsFormTabEnterProductData tabEnterProductData = new TricentsFormTabEnterProductData();
     private final TricentsFormTabSelectPriceOption tabSelectPriceOption = new TricentsFormTabSelectPriceOption();
+    private final TricentsFormTabSendQuote tabSendQuote = new TricentsFormTabSendQuote();
 
     public TricentsFormTabEnterVehicleData getTabEnterVehicleData() {
         return tabEnterVehicleData;
@@ -21,5 +22,9 @@ public class TricentsForm {
     
     public TricentsFormTabSelectPriceOption getFormTabSelectPriceOption() {
     	return tabSelectPriceOption;
+    }
+    
+    public TricentsFormTabSendQuote getFormTabSendQuote() {
+    	return tabSendQuote;
     }
 }

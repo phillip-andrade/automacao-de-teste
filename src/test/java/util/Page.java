@@ -1,10 +1,7 @@
 package util;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Page {
 
@@ -18,10 +15,5 @@ public class Page {
     public WebDriver getDriver() {
         return driver;
     }
-    
-	public WebDriverWait getDriverWait() {
-	    WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		return  driverWait;
-	}
 
 }

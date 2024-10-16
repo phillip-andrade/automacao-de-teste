@@ -69,11 +69,13 @@ public class TricentsFormTabSendQuote extends Page{
 		fieldComments.sendKeys(comments);
 	}
 	
-    public void clickSend() {
+    public void clickSend() throws InterruptedException {
+		Thread.sleep(1000);
     	buttonSend.click();
     }
     
-    public void clickPrev() {
+    public void clickPrev() throws InterruptedException {
+		Thread.sleep(1000);
     	buttonPrev.click();
     }
 }

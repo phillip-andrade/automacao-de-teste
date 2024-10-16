@@ -84,7 +84,8 @@ public class TricentsFormTabEnterVehicleData extends Page {
 		fieldAnnualMileage.sendKeys(annualMileage);
 	}
     
-    public void clickNext() {
+    public void clickNext() throws InterruptedException {
+		Thread.sleep(1000);
     	buttonNext.click();
     }
 }
