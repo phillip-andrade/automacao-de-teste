@@ -1,7 +1,7 @@
 import pages.TricentsForm;
 import steps.Steps;
 
-public class MainTemp {
+public class MainSelenium {
 
 	public static void main(String[] args) throws InterruptedException {
 
@@ -14,6 +14,7 @@ public class MainTemp {
 		switch (typeVehicle){
 		case "Automobile": {
 			//teste para Automobile
+			form.getTabEnterVehicleData().selectMenuNavAutomobile();
 			form.getTabEnterVehicleData().openTabEnterVehicleData();
 			enterVehicleData(form, "Toyota", "1500", "01/01/2022", "5", "Petrol", "45000", "ABC1D23", "10000");
 			form.getTabEnterVehicleData().clickNext();
@@ -128,9 +129,9 @@ public class MainTemp {
 
 	private static void enterProductData(TricentsForm form, String date, String insuranceSum,
 			String damageInsurance) throws InterruptedException {
-		form.getFormTabEnterProductData().setStartDate("11/17/2024");
-		form.getFormTabEnterProductData().setInsuranceSum("7000000");
-		form.getFormTabEnterProductData().setDamageInsurance("Full Coverage");
+		form.getFormTabEnterProductData().setStartDate(date);
+		form.getFormTabEnterProductData().setInsuranceSum(insuranceSum);
+		form.getFormTabEnterProductData().setDamageInsurance(damageInsurance);
 		form.getFormTabEnterProductData().setEuroProtection();
 		form.getFormTabEnterProductData().setLegalDefenseInsurance();
 	}

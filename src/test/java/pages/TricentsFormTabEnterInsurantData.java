@@ -165,5 +165,9 @@ public class TricentsFormTabEnterInsurantData extends Page{
 		Thread.sleep(1000);
     	buttonPrev.click();
     }
+    
+    public boolean isTabSelected() {
+    	return getDriver().findElement(By.id("enterinsurantdata")).isDisplayed();
+    }
 
 }
