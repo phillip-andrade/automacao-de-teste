@@ -7,6 +7,7 @@ public class TricentsForm {
     private final TricentsFormTabEnterProductData tabEnterProductData = new TricentsFormTabEnterProductData();
     private final TricentsFormTabSelectPriceOption tabSelectPriceOption = new TricentsFormTabSelectPriceOption();
     private final TricentsFormTabSendQuote tabSendQuote = new TricentsFormTabSendQuote();
+    private final TricentsSweetAlertOK sweetArlertOK = new TricentsSweetAlertOK();
 
     public TricentsFormTabEnterVehicleData getTabEnterVehicleData() {
         return tabEnterVehicleData;
@@ -26,5 +27,9 @@ public class TricentsForm {
     
     public TricentsFormTabSendQuote getFormTabSendQuote() {
     	return tabSendQuote;
+    }
+    
+    public TricentsSweetAlertOK getSweetAlertOK() {
+    	return sweetArlertOK;
     }
 }
