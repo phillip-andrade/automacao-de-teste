@@ -92,17 +92,12 @@ public class MainSelenium {
 		
 		System.out.println("vai testar o SA");
 		Thread.sleep(20000);
-		try {
-			WebElement sweetAlert = page.getDriver().findElement(By.id(""));
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		WebElement sweetAlert = page.getDriver().findElement(By.id(""));
 //		WebElement sweetAlert = page.getDriver().findElement(By.className("sweet-alert showSweetAlert visible"));
 		Thread.sleep(10000);
-//    	if(sweetAlert.isDisplayed()) {
-//    		System.out.println("O SweetAlert foi exibido com sucesso!");
-//    	}
+    	if(sweetAlert.isDisplayed()) {
+    		System.out.println("O SweetAlert foi exibido com sucesso!");
+    	}
 		Assert.assertTrue(form.getSweetAlertOK().isTabSelected());
 
 	}
