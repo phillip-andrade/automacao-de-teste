@@ -15,24 +15,9 @@ public class TricentsSweetAlertOK extends Page{
 		PageFactory.initElements(getDriver(), this);
 	}
 
-    public boolean isTabSelected() throws InterruptedException {
-    	WebElement sweetAlert = getDriver().findElement(By.className("sweet-alert showSweetAlert visible"));
-    	
-    	if(sweetAlert.isDisplayed()) {
-    		System.out.println("O SweetAlert foi exibido com sucesso!");
-    	}
-    	
-    	Thread.sleep(5000);
-    	return getDriver().findElement(By.className("sweet-alert showSweetAlert visible")).isDisplayed();
+    public String getAlertMessage() throws InterruptedException {
+		By css = By.cssSelector(".sweet-alert h2");
+		WebElement element = getDriver().findElement(css );
+        return element.getText();
     }
-    
-//	public void setSelectUltimate() throws InterruptedException {
-//		Boolean isPresent = getDriver().findElement(By.xpath("//input[@class='la-ball-fall']")).isEnabled();
-//		if(isPresent) {
-//			WebElement radio = getDriver().findElement(By.xpath("//input[@class='la-ball-fall']"));
-//			getDriver().findElement(By.xpath("//input[@id='la-ball-fall']"));
-//			Thread.sleep(1000);
-//			actions.moveToElement(radio).click().build().perform();	
-//		}
-//	}
 }

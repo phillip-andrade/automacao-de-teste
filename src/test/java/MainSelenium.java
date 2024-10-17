@@ -88,17 +88,8 @@ public class MainSelenium {
 		quote.setSendQuote(form, "fulano@detal.com.br","99987654321", "Fulano", "Ft12345", "Ft12345");
 		form.getFormTabSendQuote().clickSend();
 	
-		Page page = new Page();
-		
-		System.out.println("vai testar o SA");
 		Thread.sleep(20000);
-		WebElement sweetAlert = page.getDriver().findElement(By.id(""));
-//		WebElement sweetAlert = page.getDriver().findElement(By.className("sweet-alert showSweetAlert visible"));
-		Thread.sleep(10000);
-    	if(sweetAlert.isDisplayed()) {
-    		System.out.println("O SweetAlert foi exibido com sucesso!");
-    	}
-		Assert.assertTrue(form.getSweetAlertOK().isTabSelected());
+		Assert.assertEquals("Sending e-mail success!", form.getSweetAlertOK().getAlertMessage());
 
 	}
 

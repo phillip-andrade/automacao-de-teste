@@ -115,16 +115,9 @@ public class Steps {
 		form.getFormTabSendQuote().clickSend();
 	}
 	
-	@Entao("o sweet alert sera exibido")
+	@Entao("mensagem sucesso foi exibido")
 	public void verifySweetAlertOK() throws InterruptedException {
-		Thread.sleep(5000);
-		Assert.assertTrue(form.getSweetAlertOK().isTabSelected());
+		Thread.sleep(20000);
+		Assert.assertEquals("Sending e-mail success!", form.getSweetAlertOK().getAlertMessage());
 	}
-	
-//	@Entao("avancou para a segunda aba")
-//	public void verifyNextTab() throws InterruptedException {
-//		Thread.sleep(1000);
-//		Assert.assertTrue(form.getFormTabEnterInsurantData().isTabSelected());
-//	}
-
 }

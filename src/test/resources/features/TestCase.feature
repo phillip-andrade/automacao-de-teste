@@ -22,4 +22,4 @@ Funcionalidade: Formulario Tricentis
         Entao a quinta aba sera exibida
         E preenche todos campos da quinta aba
         Quando clica em send na quinta aba
-        Entao o sweet alert sera exibido
+        Entao mensagem sucesso foi exibido
